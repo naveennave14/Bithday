@@ -19,7 +19,7 @@ function clickNext() {
         removeIconFromButton(btn);
     }
     index++;
-    setTimeout(clickNext, 1500);
+    setTimeout(clickNext, 7000);
 }
 
 document.addEventListener('DOMContentLoaded', clickNext);
