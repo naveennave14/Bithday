@@ -12,16 +12,22 @@ const buttonIds = [
 
 let index = 0;
 
+function removeIconFromButton(button) {
+    const icon = button.querySelector('i');   // change selector if needed
+    if (icon) icon.remove();
+}
+
 function clickNext() {
     if (index >= buttonIds.length) return;
+
     const btn = document.getElementById(buttonIds[index]);
     if (btn) {
         btn.click();
-        console.log(`Clicked: ${btn.textContent}`);
+        removeIconFromButton(btn);
     }
+
     index++;
-    setTimeout(clickNext, 1500); // wait 1.5 seconds before next click
+    setTimeout(clickNext, 1500);
 }
 
-// Start the automation
-clickNext();
+document.addEventListener('DOMContentLoaded', clickNext);
